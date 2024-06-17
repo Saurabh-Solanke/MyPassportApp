@@ -8,6 +8,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -53,13 +58,18 @@
         text-align: center;
         margin-top: auto; /* This will push the footer to the bottom of the viewport if the content above is not tall enough */
       }
+      .social-icons {
+        margin: 20px 10px;
+      }
     </style>
   </head>
   <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.html">Passport Portal</a>
+        <a class="navbar-brand" href="index.html"
+          ><i class="fas fa-address-card"></i> Passport Portal</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -74,26 +84,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="new_passport.html">New Passport</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="renewal_passport.html"
-                >Renew Passport</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="history.html">History</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feedback.html">Feedback</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="payment.html">Payment</a>
-            </li>
+        
           </ul>
         </div>
       </div>
@@ -107,7 +100,7 @@
               <h2>Login</h2>
             </div>
             <div class="card-body">
-              <form action="/submit_login" method="post">
+              <form action="home.html" method="post">
                 <div class="mb-3">
                   <label for="username" class="form-label">Username</label>
                   <input
@@ -129,14 +122,14 @@
                   />
                 </div>
                 <div class="d-grid">
-                  <button type="submit" class="btn btn-primary">Login</button>
+                  <a href="home.html" class="btn btn-primary">Login</a>
                 </div>
                 <div class="text-center mt-3">
-                  <a href="/forgot_password" class="link-text"
+                  <a href="/forgot-password.html" class="link-text"
                     >Forgot Password?</a
                   >
                   |
-                  <a href="/forgot_username" class="link-text"
+                  <a href="/forgot-username.html" class="link-text"
                     >Forgot Username?</a
                   >
                 </div>
@@ -150,8 +143,11 @@
         </div>
       </div>
     </div>
-
-    <footer class="footer">
+    <footer class="footer bg-body-secondary">
+      <i class="social-icons fab fa-twitter"></i>
+      <i class="social-icons fab fa-facebook"></i>
+      <i class="social-icons fab fa-instagram"></i>
+      <i class="social-icons fas fa-envelope"></i>
       <p>&copy; 2024 Passport Application Portal. All rights reserved.</p>
     </footer>
 

@@ -8,6 +8,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -21,12 +26,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         color: #ffffff;
       }
-      .navbar-nav .nav-link {
-        color: #ffffff;
-      }
-      .navbar-dark .navbar-nav .nav-link:hover {
-        color: #4caf50;
-      }
+
       .btn-primary {
         background-color: #38b03c;
         border-color: #38b03c;
@@ -38,19 +38,23 @@
         border-color: #3a8210;
       }
       .card-header {
-        background-color: #38b03c;
-        color: #ffffff;
+        color: #38b03c;
       }
       legend {
         color: #4caf50;
       }
-      .progress-bar {
-        background-color: #4caf50;
-      }
+
       .card-body {
         overflow-y: scroll;
         height: 70vh;
-        padding-bottom: 60px;
+        /* padding-bottom: 60px; */
+      }
+      .social-icons {
+        margin: 20px 10px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
       }
     </style>
   </head>
@@ -58,7 +62,9 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Passport Portal</a>
+        <a class="navbar-brand" href="home.html"
+          ><i class="fas fa-address-card"></i> Passport Portal</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -73,12 +79,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html"
-                >Home</a
-              >
+              <a class="nav-link" aria-current="page" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="new_passport.html">New Passport</a>
+              <a class="nav-link active" href="new_passport.html"
+                >New Passport</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="renewal_passport.html"
@@ -91,10 +97,14 @@
             <li class="nav-item">
               <a class="nav-link" href="feedback.html">Feedback</a>
             </li>
+           
             <li class="nav-item">
-              <a class="nav-link" href="payment.html">Payment</a>
+              <a class="nav-link" href="faq.html">FAQ</a>
             </li>
           </ul>
+          <div class="d-flex">
+            <a href="index.html" class="btn btn-primary mx-1">Logout</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -278,7 +288,9 @@
                       </div>
                       <div class="d-grid">
                         <button
-                          class="btn btn-primary mt-5"
+                          id="nextButton1"
+                          class="btn btn-primary mt-5 w-25"
+                          type="button"
                           data-bs-toggle="tab"
                           data-bs-target="#applicantDetails"
                         >
@@ -742,7 +754,9 @@
                       </div>
                       <div class="d-grid">
                         <button
-                          class="btn btn-primary mt-5"
+                          id="nextButton2"
+                          class="btn btn-primary mt-5 w-25"
+                          type="button"
                           data-bs-toggle="tab"
                           data-bs-target="#familyDetails"
                         >
@@ -969,7 +983,9 @@
                       </div>
                       <div class="d-grid">
                         <button
-                          class="btn btn-primary mt-5"
+                          id="nextButton3"
+                          class="btn btn-primary mt-5 w-25"
+                          type="button"
                           data-bs-toggle="tab"
                           data-bs-target="#addressDetails"
                         >
@@ -1142,7 +1158,9 @@
                       </div>
                       <div class="d-grid">
                         <button
-                          class="btn btn-primary mt-5"
+                          id="nextButton4"
+                          class="btn btn-primary mt-5 w-25"
+                          type="button"
                           data-bs-toggle="tab"
                           data-bs-target="#emergencyContact"
                         >
@@ -1212,7 +1230,9 @@
                       </div>
                       <div class="d-grid">
                         <button
-                          class="btn btn-primary mt-5"
+                          id="nextButton5"
+                          class="btn btn-primary mt-5 w-25"
+                          type="button"
                           data-bs-toggle="tab"
                           data-bs-target="#otherDetails"
                         >
@@ -1736,7 +1756,9 @@
                       </div>
                       <div class="d-grid">
                         <button
-                          class="btn btn-primary mt-5"
+                          id="nextButton6"
+                          class="btn btn-primary mt-5 w-25"
+                          type="button"
                           data-bs-toggle="tab"
                           data-bs-target="#selfDeclaration"
                         >
@@ -1845,21 +1867,13 @@
                           required
                         />
                       </div>
-                      <div class="d-grid">
-                        <button type="submit" class="btn btn-success mt-5">
-                          Submit Application
-                        </button>
+                      <div class="d-grid mt-5">
+                        <a href="payment.html" class="btn btn-primary w-25"
+                          >Save and go to Payment</a
+                        >
                       </div>
                     </fieldset>
                   </div>
-                </div>
-                <div class="progress mt-3">
-                  <div
-                    class="progress-bar"
-                    role="progressbar"
-                    style="width: 14.28%"
-                    id="progressBar"
-                  ></div>
                 </div>
               </form>
             </div>
@@ -1871,12 +1885,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script>
       const tabs = document.querySelectorAll(".nav-link");
-      const progressBar = document.getElementById("progressBar");
-      tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => {
-          progressBar.style.width = `${(index + 1) * 14.28}%`;
-        });
+
+      // Adding event listeners to Next buttons to switch to the next tab
+      const nextButtons = [
+        { button: "nextButton1", target: "#applicantDetails-tab" },
+        { button: "nextButton2", target: "#familyDetails-tab" },
+        { button: "nextButton3", target: "#addressDetails-tab" },
+        { button: "nextButton4", target: "#emergencyContact-tab" },
+        { button: "nextButton5", target: "#otherDetails-tab" },
+        { button: "nextButton6", target: "#selfDeclaration-tab" },
+      ];
+
+      nextButtons.forEach((next) => {
+        const btn = document.getElementById(next.button);
+        if (btn) {
+          btn.addEventListener("click", () => {
+            document.querySelector(next.target).click();
+          });
+        }
       });
     </script>
+    <footer class="footer bg-body-secondary">
+      <i class="social-icons fab fa-twitter"></i>
+      <i class="social-icons fab fa-facebook"></i>
+      <i class="social-icons fab fa-instagram"></i>
+      <i class="social-icons fas fa-envelope"></i>
+      <p>&copy; 2024 Passport Application Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
